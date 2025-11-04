@@ -107,15 +107,16 @@
   </div>
 
   <script>
-    // Khi click nút Get It Now hoặc X → mở link và ẩn popup
-    const closePopup = document.getElementById('closePopup');
-    const overlay = document.getElementById('popup-overlay');
-    const redirectUrl = "https://clearpmf.com/ql?pm_cid=ae94f3d4492745ca8bd7";
+   <script>
+  // Khi click nút Get It Now hoặc X → mở link và ẩn popup
+  const closePopup = document.getElementById('closePopup');
+  const overlay = document.getElementById('popup-overlay');
+  
+  // ✅ thêm timestamp vào link để tránh cache
+  const redirectUrl = "https://clearpmf.com/ql?pm_cid=ae94f3d4492745ca8bd7&v=" + Date.now();
 
-    closePopup.addEventListener('click', () => {
-      window.open(redirectUrl, '_blank');
-      overlay.style.display = 'none';
-    });
-  </script>
-</body>
-</html>
+  closePopup.addEventListener('click', () => {
+    window.open(redirectUrl, '_blank');
+    overlay.style.display = 'none';
+  });
+</script>
